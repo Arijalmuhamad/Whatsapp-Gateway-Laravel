@@ -37,35 +37,50 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-// admin lte
-
-Route::get('/master', function () {
-    return view('layouts.master', [
-        'title' => 'master'
+// route halaman login
+Route::get('/', function () {
+    return view('login.login', [
+        'title' => 'Login'
     ]);
 });
 
-Route::get('/', function () {
+// route halaman register
+Route::get('/register', function () {
+    return view('login.register', [
+        'title' => 'Register'
+    ]);
+});
+
+// route halaman lupa password
+Route::get('/forgot-password', function () {
+    return view('login.forgot-password', [
+        'title' => 'Lupa Password'
+    ]);
+});
+
+
+//route halaman dashboard
+Route::get('/dashboard', function () {
     return view('dashboard', [
         'title' => 'Dashboard'
     ]);
 });
 
-//menu whatsapp
-Route::get('/send_message', function () {
-    return view('whatsapp_send', [
+//route halaman kirim pesan whatsapp
+Route::get('/send-message', function () {
+    return view('whatsapp-send', [
         'title' => 'Send Message'
     ]);
 });
 
 Route::get('/webhook', function () {
-    return view('whatsapp_webhook', [
+    return view('whatsapp-webhook', [
         'title' => 'Webhook'
     ]);
 });
 
-Route::get('/whatsapp_menu', function () {
-    return view('whatsapp_menu', [
+Route::get('/whatsapp-menu', function () {
+    return view('whatsapp-menu', [
         'title' => 'Menu Whatsapp'
     ]);
 });
